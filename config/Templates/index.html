@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Codify</title>
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-scholar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body>
+
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <a href="index.html" class="logo">
+                        <h1>CODIFY</h1>
+                    </a>
+                    <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div>
+                    <ul class="nav">
+                      <li class="scroll-to-section"><a href="#top" class="active">Asosiy bo'lim</a></li>
+                      <li class="scroll-to-section"><a href="#services">Servislar</a></li>
+                      <li class="scroll-to-section"><a href="#courses">Kurslar</a></li>
+                      <li class="scroll-to-section"><a href="#team">Jamoamiz</a></li>
+                      <li class="scroll-to-section"><a href="#events">Foydalanuvchilar</a></li>
+                      <li class="scroll-to-section"><a href="#contact">Xabar yuborish</a></li>
+                  </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-banner">
+            <div class="item item-1">
+              <div class="header-text">
+                <span class="category">Maqsadimiz</span>
+                <h2>Freelanceda maksimal daromad olish</h2>
+                <p>Buning uchun sizdan faqat darslarni ko`rib borish tavfsiya etiladi</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Rasmiy sayt</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> CODIFY</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item item-2">
+              <div class="header-text">
+                <span class="category">Nazorat qilish</span>
+                <h2>Testing rejim</h2>
+                <p>Bizning test va savollarimiz orqali
+                  <br> yanada bilimlarni mustahkamlaymiz</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="#">Natijalarni bilish</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i>Codify</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% for banner in banners %}
+
+            <div class="item item-{{banner_total}}">
+              <div class="header-text">
+                <span class="category">{{banner.little_title}}</span>
+                <h2>{{banner.big_title}}</h2>
+                <p>{{banner.description}}</p>
+                <div class="buttons">
+                  <div class="main-button">
+                    <a href="{{banner.link_site}}">{{banner.link_name}}</a>
+                  </div>
+                  <div class="icon-button">
+                    <a href="#"><i class="fa fa-play"></i> {{banner.whats_video}}?</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="services section" id="services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{% static 'images/ish.jpg' %}" alt="online degrees">
+            </div>
+            <div class="main-content">
+              <h4>Upwork</h4>
+              <p>
+                "Upwork" onlayn platforma - frilanserlarni xizmatlarini taklif qiladigan joylar bilan bog'lash maqsadida ishlab chiqilgan. Bu yozish, dasturlash, grafik dizayn va boshqa turdagi xizmatlarni qidirib topishni o'rganuvchilar va bizneslarga ko'rsatish uchun mashhur</p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{% static 'images/kwork.webp' %}" alt="short courses">
+            </div>
+            <div class="main-content">
+              <h4>kwork</h4>
+              <p>
+                "Kwork" ham onlayn platforma, ammo "Upwork"dan farqli ravishda, u O'zbekistonning mahalliy bozorda ishlaydigan frilanserlarni va mijozlarni bog'lash uchun mo'ljallangan. Bu platforma orqali frilanserlar o'z xizmatlarini taklif qilish, mijozlar esa xizmatlarni </p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item">
+            <div class="icon">
+              <img src="{% static 'images/toptal.webp' %}" alt="web experts">
+            </div>
+            <div class="main-content">
+              <h4>Toptal</h4>
+              <p>
+                "Top tal" ayniqsa "TopTal" deb ataluvchi onlayn platforma, bu esa yuqori sifatli dasturchilarni, dizaýnerlerni va profeessional IT mutaxassislarni mijozlar bilan bog'laydi. Bu platforma orqali mijozlar xususiy va korxonalariga lozim bo'lgan</p>
+              <div class="main-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-1">
+          <div class="accordion" id="accordionExample">
+            {% for question in questions %}
+            {% if question.id == 1%}
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{question.class}}">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{question.class}}" aria-expanded="true" aria-controls="collapse{{question.class}}">
+                  {{question.question}}
+                </button>
+              </h2>
+              <div id="collapse{{question.class}}" class="accordion-collapse collapse show" aria-labelledby="heading{{question.class}}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  {{question.answer}}
+                </div>
+              </div>
+            </div>
+            {% else %}
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading{{question.class}}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{question.class}}" aria-expanded="false" aria-controls="collapse{{question.class}}">
+                  {{question.question}}
+                </button>
+              </h2>
+              <div id="collapse{{question.class}}" class="accordion-collapse collapse" aria-labelledby="heading{{question.class}}" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  {{question.answer}}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <div class="section-heading">
+            <h6>Biz haqimizda</h6>
+            <h2>Codify nima?</h2>
+            <p>Codify freelanserlikni o'rgatuvchi bepul online ta'lim platformasi hisoblanadi!</p>
+            <div class="main-button">
+              <a href="#">Ko'proq ma'lumot olish</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section courses" id="courses" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Oxirgi kurslar</h6>
+            <h2>Kurslar</h2>
+          </div>
+        </div>
+      </div>
+      <ul class="event_filter">
+        <li>
+          <a class="is_active" href="#!" data-filter="*">Hammasini ko'rsatish</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".upwork">Upwork</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".kwork">Kwork</a>
+        </li>
+        <li>
+          <a href="#!" data-filter=".toptal">TopTal</a>
+        </li>
+      </ul>
+
+      <div class="row event_box">
+      {% for lesson in lessons%}
+        {% if lesson.category == 'upwork'%}
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 upwork">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{lesson.youtube_logo.url}}" alt=""></a>
+              <span class="category">{{lesson.category}}</span>
+
+            </div>
+            <div class="down-content">
+              <span class="author">{{lesson.author}}</span>
+              <h4>Ko'rish</h4>
+            </div>
+          </div>
+        </div>
+        {%elif lesson.category == 'toptal'%}
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 toptal">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{lesson.youtube_logo.url}}" alt=""></a>
+              <span class="category">{{lesson.category}}</span>
+
+            </div>
+            <div class="down-content">
+              <span class="author">{{lesson.author}}</span>
+              <h4>Ko'rish</h4>
+            </div>
+          </div>
+        </div>
+        {%elif lesson.category == 'kwork'%}
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 toptal">
+          <div class="events_item">
+            <div class="thumb">
+              <a href="#"><img src="{{lesson.youtube_logo.url}}" alt=""></a>
+              <span class="category">{{lesson.category}}</span>
+
+            </div>
+            <div class="down-content">
+              <span class="author">{{lesson.author}}</span>
+              <h4>Ko'rish</h4>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+              {% for student in students %}
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="{{student.students}}" data-speed="1000"></h2>
+                   <p class="count-text ">Jami o'quvchilar</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="{{student.total_courses}}" data-speed="1000"></h2>
+                  <p class="count-text ">Jami kurslar</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" data-to="{{student.finished_courses}}" data-speed="1000"></h2>
+                  <p class="count-text ">Jami bitiruvchilar</p>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team section" id="team">
+    <div class="container">
+      <div class="row">
+        {% for team in teams%}
+        <div class="col-lg-3 col-md-6">
+          <div class="team-member">
+            <div class="main-content">
+              <img src="{{team.image.url}}" alt="" style="width:250px; height:250px;">
+              <span class="category">{{team.work}}</span>
+              <h4>{{team.full_name}}</h4>
+              <ul class="social-icons">
+                <li><a href="{{team.facebook}}"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="{{team.twitter}}"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="{{team.linkedin}}"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <div class="section testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="owl-carousel owl-testimonials">
+            {% for rate in rates %}
+            <div class="item">
+              <p>“{{rate.description}}”</p>
+              <div class="author">
+                <img src="{{rate.image.url}}" alt="" style="height: 150px; width: 150px;">
+                <span class="category">{{rate.working}}</span>
+                <h4>{{rate.full_name}}</h4>
+              </div>
+            </div>
+            {% endfor %}
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <div class="section-heading">
+            <h6>Sharhlar</h6>
+            <h2>Biz haqimizda foydalanuvchilarning fikri?</h2>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section events" id="events">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Rating</h6>
+            <h2>Users</h2>
+          </div>
+        </div>
+        {% for user in users %}
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="#" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">{{user.me}}</span>
+                    <h4>{{user.working_name}}</h4>
+                  </li>
+                  <li>
+                    <span>Username</span>
+                    <h6>{{user.username}}</h6>
+                  </li>
+                  <li>
+                    <span>Telegram</span>
+                    <h6><a href="{{user.telegram}}"></a>telegram</h6>
+                  </li>
+                  <li>
+                    <span>Instagram</span>
+                    <h6><a href="{{user.instagram}}"></a>instagram</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6  align-self-center">
+          <div class="section-heading">
+            <h6>Biz bilan bog'laning</h6>
+            <h2>Siz biz bilan muammolarsiz bog'lana olasiz!</h2>
+
+
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" action="{% url 'index' %}" method="post">{% csrf_token %}
+              <div class="row">
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="name" name="full_name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea name="text" id="message" placeholder="Your Message"></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © Codify. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/counter.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+
+  </body>
+</html>

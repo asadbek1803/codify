@@ -60,40 +60,10 @@ class MyAccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser):
-    location = (
-        ('fergana', 'Fergana'),
-        ('andijan', 'Andijan'),
-        ('namangan', 'Namangan'),
-        ('tashkent', 'Tashkent'),
-        ('other', 'Other')
-    )
-    dev_typse = (
-        ('oldin ishlamaganman', 'Oldin ishlamaganman'),
-        ('junior', 'Junior dasturchiman'),
-        ('middle', 'Middle dasturchiman'),
-        ('senior', 'Senior dasturchiman')
-    )
     first_name = models.CharField(max_length=50, blank=True, null=True)
     last_name = models.CharField(max_length=50, blank=True, null=True)
-
     username = models.CharField(max_length=50, unique=True)
     email = models.EmailField(max_length=100, unique=True)
-    telegram = models.URLField(default="https://t.me/username")
-    instagram = models.URLField(default="https://instagram.com/username")
-    facebook = models.URLField(default="https://facebook.com/username")
-    me = models.CharField(max_length=50, choices=dev_typse)
-    working_location = models.CharField(max_length=24, choices=location)
-    company = models.CharField(max_length=150)
-
-
-
-    is_verified = models.BooleanField(default=False)
-    score = models.IntegerField()
-    starting_test = models.DateTimeField()
-    finished_test = models.DateTimeField()
-    total_results = models.SmallIntegerField()
-    is_failed = models.BooleanField(default=False)
-
     #
     # connect_upwork_account = models.URLField(null=True, blank=True)
     # connect_toptal_account = models.URLField(null=True, blank=True)
@@ -131,54 +101,11 @@ class Account(AbstractBaseUser):
     def has_module_perms(self, add_label):
         return True
 
-
-
-    def starting_test(self):
-        self.starting_test = self.starting_test.auto_now()
-
-
-    def failed_test(self):
-        if self.score < 8:
-            self.is_failed = self.is_failed = True
-            self.finished_test = self.finished_test.auto_now()
-        else:
-            self.finished_test = self.finished_test.auto_now()
-
-
     def profile_image_tur(self):
         if Account.profile_image == None:
             return False
         else:
             return True
-
-
-
-
-
-class Test(models.Model):
-    platforms = (
-        ('upwork', 'Upwork'),
-        ('kwork', 'Kwork'),
-        ('freelancer', 'Freelancer'),
-        ('toptal', 'Toptal')
-    )
-    test_question = models.CharField(max_length=200)
-    true_test = (
-        ('a', 'A'),
-        ('b', 'B'),
-        ('c', 'C'),
-        ('d', 'D')
-    )
-    a = models.CharField(max_length=200, null=True, blank=True)
-    b = models.CharField(max_length=200, null=True, blank=True)
-    c = models.CharField(max_length=200, null=True, blank=True)
-    d = models.CharField(max_length=200, null=True, blank=True)
-    correct_answer = models.CharField(max_length=14, choices=true_test, null=True, blank=True)
-
-    def __str__(self):
-        return self.test_question
-
-
 
 
 
