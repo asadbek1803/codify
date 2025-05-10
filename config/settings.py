@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'user_auth',
     'work_search',
+    'contact_us',
+    'chat',
     'home',
 
 
