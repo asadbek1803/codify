@@ -30,5 +30,5 @@ def home(request):
             )
 
 
-    return render(request, 'Templates/index.html', data)
+    return render(request, 'index.html', data)
 
