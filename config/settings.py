@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'user_auth',
     'work_search',
     'contact_us',
+    'recommend_app',
     'chat',
     'home',
 
