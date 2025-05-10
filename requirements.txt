@@ -1,0 +1,7 @@
+django
+pillow
+requests
+djangorestframework
+markdown
+django-filter
+whitenoise
